@@ -1,0 +1,31 @@
+GIT Cheat sheet
+1) Check last commit :
+	$git log --name-status HEAD^..HEAD
+	
+2) Check the changes post adding :
+	$git diff --cached
+	
+3) Views changes post commits(a plenty) before pushing
+	$git diff --stat origin/branchname
+
+4) Get the changes made to a file in the recent commit
+	$git diff HEAD^^ myfile (change HEAD to point to commit that you want to know the changes made to a file)
+
+5) Show the difference between 2 branches 
+	$git diff branch_1..branch_2
+
+6) Show all the remotes 
+	$git remote -v
+
+7) Sync a file with a particular branch
+	$git checkout -- theirs <branch name> -- <path to file>
+
+8) Modify the last commit :
+	$git commit --amend
+
+9) Show the recent commit details
+	$git show HEAD
+
+10) Rebase interactively"
+	$git rebase -i HEAD~N
+	N is an int, the number of commits behind which you want to rebase
