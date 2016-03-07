@@ -2,7 +2,7 @@ GIT Cheat sheet
 1) Check last commit :
 	$git log --name-status HEAD^..HEAD
 	
-2) Check the changes post adding :
+2) Check the changes post adding, staged but not committed :
 	$git diff --cached
 	
 3) Views changes post commits(a plenty) before pushing
@@ -29,3 +29,26 @@ GIT Cheat sheet
 10) Rebase interactively"
 	$git rebase -i HEAD~N
 	N is an int, the number of commits behind which you want to rebase
+
+11) Rebase WRT a branch
+	$git rebase <branch1> <branch2>
+
+12) Check local unstaged changes,
+	$git diff --exit-code
+
+13) List all the branches in a specific remote :
+	$git remote show <name of the remote>
+	$git ls-remote --heads <name of the remote>
+	$git branch -r
+14) Do away with uncommited changes :
+	$git stash
+
+15) Revert a specific file to specific version
+	$git checkout <version name> <file name>
+
+16) List all commits for a specific file
+	$git log --follow filename
+
+17) Roll back to a specific commit in the history
+	$git reset --hard <SOME-COMMIT>
+	
