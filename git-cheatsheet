@@ -51,4 +51,51 @@ GIT Cheat sheet
 
 17) Roll back to a specific commit in the history
 	$git reset --hard <SOME-COMMIT>
-	
+
+18) Start ignoring changes made to a file
+	$git update-index --assume-unchanged path/to/file
+
+19) Resuming tracking changes to a file
+	$git update-index --no-assume-unchanged path/to/file
+
+20) Pull a collaborator's branch and start working on it :
+	$git remote add <name_of_remote>
+	$git pull <name_of_remote> 
+	$git checkout <name_of_remote>/<name_of_branch>
+	$git checkout -b <new_branch>
+	Now, you would be in a new branch, from where you can continue to work on where the colloborator left
+	Once you're done, you can commit and push, as usual
+
+21) Transfer newer commits to a new branch
+	$git branch <new_branch>
+	$git reset --hard HEAD~N
+	$git checkout <new_branch>
+
+22) Transfer newer commits on master to existing branch
+	$git checkout <existingbranch>
+	$git merge master
+	$git checkout master
+	$git reset --hard HEAD~N
+	$git checkout <existingbranch>
+
+The above two can also be done with hash of the commit as well!
+
+23) Undo a ```$git add```:
+	$git reset
+
+24) Incase, you want to reset a specific file, 
+	$git reset <Path_to_file>
+
+25) Make existing branch track a remote branch:
+	$git branch --set-upstream-to=upstream/<local_branch>
+
+26) Edit commit messages:
+	$git commit --amend -m "New commit message"
+
+27) Force overwrite local files on pull:
+	$git fetch --all
+	$git reset --hard origin/<branch_name>
+
+28) Remove Local untracked files:
+	$git -f -n
+
